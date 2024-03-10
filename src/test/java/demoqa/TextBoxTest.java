@@ -17,25 +17,32 @@ public class TextBoxTest {
     static void beforeAll(){
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-//     Configuration.holdBrowserOpen = true;
+//    Configuration.holdBrowserOpen = true;
 //    Configuration.timeout = 10000;
 
     }
     @Test
     void fillFormTest(){
 
+    String userName = "Mykola McKlay";
+    String userEmail = "123@gmail.com";
+    String currentAddress = "dido main str";
+    String permanentAddress = "tot ze chto i byl";
         open("/text-box");
         executeJavaScript("$('#fixedban').remove()");
         //  $(".main-header").shouldHave(text("Text Box"));
         $(".text-center").shouldHave(text("Text Box"));
-
-        $("#userName").setValue("Mykola McKlay");
-        $("#userEmail").setValue("123@gmail.com");
-        $("#currentAddress").setValue("dido main str");
-        $("#permanentAddress").setValue("tot ze");
+        $("#userName").setValue(userName);
+        $("#userEmail").setValue(userEmail);
+        $("#currentAddress").setValue(currentAddress);
+        $("#permanentAddress").setValue(permanentAddress);
 
         $("#submit").click();
 
         $("#output").shouldBe(visible);
+        $("#output").$("#name").shouldHave(text(userName));
+        $("#output #email").shouldHave(text(userEmail));
+        $("#output #currentAddress").shouldHave(text(currentAddress));
+        $("#output #permanentAddress").shouldHave(text(permanentAddress));
     }
 }
