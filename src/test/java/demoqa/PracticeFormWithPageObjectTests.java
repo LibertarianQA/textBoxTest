@@ -10,6 +10,7 @@ public class PracticeFormWithPageObjectTests extends TestBase {
         String firstName = "Mykola";
         String lastName = "McKlay";
         String userEmail = "123@gmail.com";
+        String userGander = "Male";
         String userPhone = "0123456789";
         String currentAddress = "na derevnu dedushke";
         String dayBirthDate = "15";
@@ -25,7 +26,7 @@ public class PracticeFormWithPageObjectTests extends TestBase {
         registrationPage.setFirstName(firstName);
         registrationPage.setLastName(lastName);
         registrationPage.setEmail(userEmail);
-        registrationPage.setGender();
+        registrationPage.setGender(userGander);
         registrationPage.setPhone(userPhone);
         registrationPage.setBirthDate(dayBirthDate, monthBirthDate, yearBirthDate);
         registrationPage.setSubjectsInput(subjectsInput);

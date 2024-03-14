@@ -17,7 +17,7 @@ public class RegistrationPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
-            genderInput = $(".custom-control-label"),
+            userGender = $("#genterWrapper"),
             phoneInput = $("#userNumber"),
             dateOfBirthInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
@@ -48,8 +48,8 @@ public class RegistrationPage {
         emailInput.setValue(value);
     }
 
-    public void setGender() {
-        genderInput.click();
+    public void setGender(String value) {
+        userGender.$(byText(value)).click();
     }
 
     public void setPhone(String value) {
@@ -91,6 +91,7 @@ public class RegistrationPage {
         cityLocator.click();
         stateCityWrapper.$(byText(city)).click();
     }
+
     public void submit() {
         submit.click();
     }

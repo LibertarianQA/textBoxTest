@@ -12,20 +12,22 @@ public class FakerExamples {
         Faker faker = new Faker();
 
         // Генерация фейковой даты рождения
-        Date dateOfBirth = faker.date().birthday();
-        LocalDate localDateOfBirth = dateOfBirth.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        String dateOfBirth = faker.date().birthday().toString();
 
-        // Получение года, месяца и дня
-        int year = localDateOfBirth.getYear();
-        Month month = localDateOfBirth.getMonth();
-        int day = localDateOfBirth.getDayOfMonth();
-        String monthName = month.toString();  // То же, что и name(), возвращает название месяца в виде строки
-        System.out.println("Month: " + monthName);
-        // Вывод результата
-        System.out.println("Year: " + year);
-        System.out.println("Month: " + month);  // Получаем название месяца
-        System.out.println("Day: " + day);
+        System.out.println(dateOfBirth);
 
+        String i =faker.options().option( "English", "Arts", "History", "Hindi");
+        System.out.println(i);
+
+
+        String randomString = faker.regexify("[a-zA-Z0-9`'!@#$%^&*()_+-=<>?.,{}|\\[\\]~;:]{28}");
+        System.out.println("Случайная строка: " + randomString);
+
+        String randomDigits = faker.regexify("[1-28]{28}");
+        System.out.println("Случайная строка: " + randomDigits);
+
+        int randomYear = faker.number().numberBetween(1900, 2028);
+        System.out.println("Случайный год: " + randomYear);
         /*
         "English", "Arts", "History", "Hindi"
         "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
