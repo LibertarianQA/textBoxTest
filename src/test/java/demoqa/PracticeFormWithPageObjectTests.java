@@ -1,9 +1,10 @@
 package demoqa;
 
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 public class PracticeFormWithPageObjectTests extends TestBase {
-
+@Disabled  ("old version")
 
     @Test
     void fillPracticeForm() {
