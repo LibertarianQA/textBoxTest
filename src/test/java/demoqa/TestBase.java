@@ -55,7 +55,10 @@ public class TestBase {
     void addListener(){
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 }
-g{
+
+@AfterEach
+
+void addAttachment(){
     Attach.screenshotAs("Last screenshot");
     Attach.pageSource();
     Attach.browserConsoleLogs();
