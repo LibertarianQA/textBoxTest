@@ -6,6 +6,7 @@ package demoqa;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -21,6 +22,7 @@ public class TextBoxTest {
 //    Configuration.timeout = 10000;
 
     }
+    @Tag("simple")
     @Test
     void fillFormTest(){
 
