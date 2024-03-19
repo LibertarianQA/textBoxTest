@@ -53,7 +53,7 @@ task simple_test(type: Test ){
     }
 }
 
-task print(type: Test ){
+task (type: Test ){
     useJUnitPlatform(){
         includeTags("print")
     }

@@ -12,7 +12,7 @@ import java.util.Date;
 public class FakerExamples {
     public static void main(String[] args) {
         Faker faker = new Faker();
-
+// System.getProperty("browser", "firefox");
         // Генерация фейковой даты рождения
         String dateOfBirth = faker.date().birthday().toString();
 

@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import pages.components.TestDataGenerator;
 
 import static io.qameta.allure.Allure.step;
-
+@Tag("simple")
 public class PracticeFormWithPageObjectFakersData extends TestBase {
 
-    @Tag("simple")
+
     @Test
     void fillPracticeForm() {
         String firstName = TestDataGenerator.generateFirstName();

@@ -18,9 +18,9 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = System.getProperty("BROWSER_SIZE","1920x1080");
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.remote ="https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote =System.getProperty("REMOTE_URL");
       //  Configuration.holdBrowserOpen = true;
         DesiredCapabilities options = new DesiredCapabilities();
         options.setCapability("browserVersion", "122.0");
