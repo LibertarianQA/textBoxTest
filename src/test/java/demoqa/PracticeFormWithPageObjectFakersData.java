@@ -1,7 +1,5 @@
 package demoqa;
 
-
-import io.qameta.allure.Step;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.components.TestDataGenerator;
@@ -24,9 +22,9 @@ public class PracticeFormWithPageObjectFakersData extends TestBase {
         String yearBirthDate = TestDataGenerator.yearBirthDate();
         String subjectsInput = TestDataGenerator.subjectsInput();
         String hobbiesWrapper = TestDataGenerator.hobbiesWrapper();
-        String uploadFileFromClasspath = "img/1.png";
-        String state = "NCR";
-        String city = "Delhi";
+        String uploadFileFromClasspath = TestDataGenerator.uploadFileFromClasspath();
+        String state = TestDataGenerator.state();
+        String city = TestDataGenerator.setRandomCity(state);
 
         step("open page", () -> {
             registrationPage.openPage();
@@ -47,7 +45,6 @@ public class PracticeFormWithPageObjectFakersData extends TestBase {
             registrationPage.submit();
         });
 
-
         step("verify results", () -> {
             registrationPage.verifyResultsModalAppers();
             registrationPage.verifyResults("Student Name", firstName + " " + lastName);
@@ -55,6 +52,11 @@ public class PracticeFormWithPageObjectFakersData extends TestBase {
             registrationPage.verifyResults("Gender", userGander);
             registrationPage.verifyResults("Mobile", userPhone);
             registrationPage.verifyResults("Date of Birth", dayBirthDate + " " + monthBirthDate + "," + yearBirthDate);
+            registrationPage.verifyResults("Subjects",subjectsInput);
+            registrationPage.verifyResults("Hobbies",hobbiesWrapper);
+            registrationPage.verifyResults("Picture",uploadFileFromClasspath.substring(uploadFileFromClasspath.lastIndexOf("/") + 1));
+            registrationPage.verifyResults("Address",currentAddress);
+            registrationPage.verifyResults("State and City",state+" "+city);
         });
 
 

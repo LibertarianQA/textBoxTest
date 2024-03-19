@@ -2,6 +2,10 @@ package pages.components;
 
 import com.github.javafaker.Faker;
 
+
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class TestDataGenerator {
 
     private static final Faker faker = new Faker();
@@ -40,6 +44,37 @@ public class TestDataGenerator {
         return faker.options().option("Economics", "English", "Arts", "History", "Hindi");
     }
     public static String hobbiesWrapper() {
+
         return faker.options().option("Sports", "Reading", "Music");
     }
-}
+    public static String uploadFileFromClasspath() {
+
+        return "img/"+faker.options().option("1.png", "2.jpeg","3.pdf");
+    }
+    public static String state() {
+
+        return faker.options().option("Uttar Pradesh", "NCR", "Haryana", "Rajasthan");
+    }
+
+    public static String setRandomCity(String state){
+        String item = null;
+        ArrayList<String> values = new ArrayList<>();
+        if (state.equals("NCR")){
+            Collections.addAll(values,"Delhi", "Gurgaon", "Noida");
+            item = values.get(faker.random().nextInt(0,values.size()-1));
+        }
+        else if (state.equals("Uttar Pradesh")){
+            Collections.addAll(values,"Agra", "Lucknow", "Merrut");
+            item = values.get(faker.random().nextInt(0,values.size()-1));
+        }
+        else if (state.equals("Haryana")){
+            Collections.addAll(values,"Karnal", "Panipat");
+            item = values.get(faker.random().nextInt(0,values.size()-1));
+        }
+        else if  (state.equals("Rajasthan")){
+            Collections.addAll(values,"Jaipur", "Jaiselmer");
+            item = values.get(faker.random().nextInt(0,values.size()-1));
+        }
+        return item;
+    }
+    }
