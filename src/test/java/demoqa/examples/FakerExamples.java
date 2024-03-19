@@ -1,6 +1,8 @@
 package demoqa.examples;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -56,4 +58,14 @@ public class FakerExamples {
 
          */
     }
+
+    @Test
+    @Tag("print")
+
+    void simplePropertyTest(){
+        System.out.println("Hellow  "+ System.getProperty("user name" ,"unkown user"));
+    }
+
+
+    // gradle clean print
 }
