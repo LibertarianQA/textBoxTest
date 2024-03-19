@@ -8,7 +8,7 @@ import static io.qameta.allure.Allure.step;
 
 public class PracticeFormWithPageObjectFakersData extends TestBase {
 
-    @Tag("simple")
+    @Tag("base")
     @Test
     void fillPracticeForm() {
         String firstName = TestDataGenerator.generateFirstName();
