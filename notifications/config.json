@@ -5,8 +5,8 @@
     "environment": "QA_Mykola",
     "comment": "any comment @dssdflksdflas",
     "reportLink": "https://jenkins.autotest.cloud",
-    "language": "UA",
-    "allureFolder": "build/allure-report/",
+    "language": "ru",
+    "allureFolder": "textBoxTest/allure-report/",
     "enableChart": true
   },
   "telegram": {

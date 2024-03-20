@@ -25,7 +25,8 @@ public class TestBase {
         DesiredCapabilities options = new DesiredCapabilities();
         options.setCapability("browserVersion", "122.0");
         options.setCapability("selenoid:options", new HashMap<String, Object>() {{
-            /* How to add test badge */
+            /* How to add test badge
+            * git s */
             put("name", "Test badge...");
 
             /* How to set session timeout */
