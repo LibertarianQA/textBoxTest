@@ -13,5 +13,6 @@ Invoke-WebRequest -Uri 'https://api.telegram.org/bot7125737801:AAGoynGsNAYoal4Xr
 
 
 java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.6.1.jar
+java "-DconfigFile=notifications/config.json" -jar ../allure-notifications-4.6.1.jar
 
 notifications/config.json

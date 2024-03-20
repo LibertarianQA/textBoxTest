@@ -6,7 +6,7 @@
     "comment": "any comment @dssdflksdflas",
     "reportLink": "https://jenkins.autotest.cloud",
     "language": "ru",
-    "allureFolder": "textBoxTest/allure-report/",
+    "allureFolder": "allure-report/",
     "enableChart": true
   },
   "telegram": {
