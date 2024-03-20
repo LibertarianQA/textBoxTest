@@ -1,0 +1,17 @@
+telegram username t.me/QA_stranger_bot
+telegram token 7125737801:AAGoynGsNAYoal4XrBA4HUwBBMNiWXEY5GE
+chat id -1002008294330
+
+
+curl https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/getUpdates | jq .message.chat.id
+curl https://api.telegram.org/bot7125737801:AAGoynGsNAYoal4XrBA4HUwBBMNiWXEY5GE/getUpdates | jq .message.chat.id
+
+
+curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "123456789", "text": "This is a test from curl", "disable_notification": true}' https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
+curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "-1002008294330", "text": "This is a test from curl", "disable_notification": true}' https://api.telegram.org/bot7125737801:AAGoynGsNAYoal4XrBA4HUwBBMNiWXEY5GE/sendMessage
+Invoke-WebRequest -Uri 'https://api.telegram.org/bot7125737801:AAGoynGsNAYoal4XrBA4HUwBBMNiWXEY5GE/sendMessage' -Method 'POST' -Headers @{'Content-Type' = 'application/json'} -Body '{"chat_id": "-1002008294330", "text": "This is a test from curl", "disable_notification": true}'
+
+
+java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.6.1.jar
+
+notifications/config.json
