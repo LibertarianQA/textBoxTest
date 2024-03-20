@@ -4,6 +4,8 @@ package demoqa;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import pages.components.TestBase;
+
 @Tag("simple")
 public class PracticeFormWithPageObjectTests extends TestBase {
 @Disabled  ("old version")
